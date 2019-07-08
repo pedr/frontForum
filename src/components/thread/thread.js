@@ -11,7 +11,9 @@ class Thread extends React.Component {
             isFetching: true,
             posts: null,
             content: null,
+            replyTo: null,
         };
+        this.handleClickOnReply = this.handleClickOnReply.bind(this);
     }
 
     componentDidMount() {
@@ -27,6 +29,12 @@ class Thread extends React.Component {
             .catch(e => console.log(e));
     }
 
+    handleClickOnReply(post) {
+        this.setState({
+            replyTo: post.id,
+        });
+    }
+
 
     render() {
         const postsComponents = [];
@@ -38,7 +46,12 @@ class Thread extends React.Component {
             );
         }
         for (const post of this.state.posts) {
-            postsComponents.push(<li> <Post value={ post }/> </li>)
+            postsComponents.push(
+                <li key={post.id}>
+                    <Post onClick={() => this.handleClickOnReply(post)}
+                        value={ post }/>
+                </li>
+            )
         }
         return (
             <div className="b--light-silver ma5 ba">
@@ -46,7 +59,7 @@ class Thread extends React.Component {
                 <ul>
                     { postsComponents }
                 </ul>
-                <Reply/>
+                <Reply replyTo={this.state.replyTo}/>
             </div>
         );
     }

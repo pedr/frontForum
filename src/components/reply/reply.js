@@ -42,7 +42,7 @@ class Reply extends React.Component {
                 />
 
                 <div className="ml2 flex flex-column">
-                    <p className="">Respondendo a #id</p>
+                    <p className="">Respondendo {this.props.replyTo && `à #${this.props.replyTo}` || 'ninguém'}</p>
                     <button type="submit">Enviar</button>
                 </div>
 

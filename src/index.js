@@ -6,6 +6,8 @@ import Navbar from './components/navbar';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
+import 'tachyons';
+
 ReactDOM.render(
     <BrowserRouter>
         <Navbar/>

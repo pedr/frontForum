@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Post from '../post';
+import Reply from '../reply';
 
 class Thread extends React.Component {
     constructor(props) {
@@ -40,11 +41,12 @@ class Thread extends React.Component {
             postsComponents.push(<li> <Post value={ post }/> </li>)
         }
         return (
-            <div>
-                <h4>{ this.state.content }</h4>
+            <div className="b--light-silver ma5 ba">
+                <h4 className="pa3">{ this.state.content }</h4>
                 <ul>
                     { postsComponents }
                 </ul>
+                <Reply/>
             </div>
         );
     }

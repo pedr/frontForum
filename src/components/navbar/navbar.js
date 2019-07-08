@@ -11,7 +11,9 @@ class Navbar extends React.Component {
 
     render() {
         return (
-            <li>asdfsadf</li>
+            <div>
+                
+            </div>
         );
     };
 }

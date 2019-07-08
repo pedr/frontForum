@@ -4,13 +4,13 @@ class Post extends React.Component {
 
     render() {
         return (
-            <p>
+            <p className="mv4">
                 { this.props.value.content }
-                <ul><li>
-                    Id: { this.props.value.id  + " "}
-                    Author: { this.props.value.userId }
-                    </li>
-                </ul>
+                <p>
+                    Criador: { this.props.value.user.nickname }
+                    Numero de postagem: { this.props.value.user.postCount }
+                </p>
+                
             </p>
         );
     }
